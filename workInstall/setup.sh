@@ -20,7 +20,7 @@ apt-get update
 apt-get upgrade -y
 
 # Install software and themes
-apt-get -y install htop uprecords-cgi nload tcptrack unity-tweak-tool vim git firmware-b43-installer
+apt-get -y install htop uprecords-cgi nload tcptrack unity-tweak-tool vim git rdesktop fping firmware-b43-installer
 apt-get -y install vivacious-colors flatabulous-theme
 
 # Gets and installs the latest version of atom
