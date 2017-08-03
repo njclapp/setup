@@ -20,8 +20,9 @@ apt-get update
 apt-get upgrade -y
 
 # Install software and themes
-apt-get -y install htop uprecords-cgi nload tcptrack unity-tweak-tool vim git rdesktop fping firmware-b43-installer
-apt-get -y install vivacious-colors flatabulous-theme
+apt-get -y install htop uprecords-cgi nload tcptrack unity-tweak-tool vim git rdesktop fping firmware-b43-installer # Work-related
+apt-get -y install sl tig # For fun
+apt-get -y install vivacious-colors flatabulous-theme # Themes
 
 # Gets and installs the latest version of atom
 wget https://atom.io/download/deb -O atom.deb
