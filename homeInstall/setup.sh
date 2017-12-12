@@ -25,8 +25,9 @@ mv .bashrc /home/$USER/
 mv .vimrc /home/$USER/
 
 # Move backgrounds to pictures folder
-cp Wallpapers/* /home/nate/Pictures
-chmod 777 /home/nate/Pictures/*
+cp Wallpapers/* /home/$USER/Pictures
+chmod 777 /home/$USER/Pictures/*
+chown $USER:$USER /home/$USER/Pictures/*
 
 # Add repos and update
 add-apt-repository ppa:webupd8team/atom -y # Atom
