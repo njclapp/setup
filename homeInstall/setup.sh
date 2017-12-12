@@ -64,5 +64,6 @@ sudo sed -i "s/$hostn/$HOSTNAME/g" /etc/hosts
 sudo sed -i "s/$hostn/$HOSTNAME/g" /etc/hostname
 
 
-read -p "Setup has completed. Press any key to reboot."
+echo "Post-install has completed. Rebooting in 10 seconds..."
+sleep 10
 reboot
