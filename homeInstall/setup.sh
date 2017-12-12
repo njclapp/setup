@@ -3,6 +3,7 @@
 
 # VARIABLES
 HOSTNAME=''
+USER=''
 BASIC_PACKAGES='vim htop git lm-sensors atom unity-tweak-tool vlc steam chromium-browser putty sl tig uprecords-cgi'
 SYSADMIN_PACKAGES='nmap fping rdesktop tcptrack nload'
 THEME='ultra-flat-icons flatabulous-theme'
@@ -18,6 +19,10 @@ fi
 # Initial Update
 apt-get update && sudo apt-get upgrade -y
 apt-get dist-upgrade -y
+
+# Move dotfiles
+mv .bashrc /home/$USER/
+mv .vimrc /home/$USER/
 
 # Move backgrounds to pictures folder
 cp Wallpapers/* /home/nate/Pictures
