@@ -7,6 +7,7 @@ USER=''
 BASIC_PACKAGES='vim htop git lm-sensors atom unity-tweak-tool vlc steam chromium-browser putty sl tig uprecords-cgi'
 SYSADMIN_PACKAGES='nmap fping rdesktop tcptrack nload'
 THEME='ultra-flat-icons flatabulous-theme'
+DISCORD_VERSION='0.0.3'
 
 # Check if user is root
 if ! whoami | grep -q root; then
@@ -43,6 +44,10 @@ apt-get install $SYSADMIN_PACKAGES -y
 
 # Themes/Icon packs
 apt-get install $THEME -y
+
+# Download/Install Discord
+wget https://dl.discordapp.net/apps/linux/$DISCORD_VERSION/discord-$DISCORD_VERSION.deb
+dpkg -i discord-$DISCORD_VERSION.deb
 
 # Set up lm-sensors
 sensors-detect
