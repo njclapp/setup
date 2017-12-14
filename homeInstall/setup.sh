@@ -68,7 +68,7 @@ hostn=$(cat /etc/hostname)
 sudo sed -i "s/$hostn/$HOSTNAME/g" /etc/hosts
 sudo sed -i "s/$hostn/$HOSTNAME/g" /etc/hostname
 
-
+# Script is finished...Reboot
 echo "Post-install has completed. Rebooting in 10 seconds..."
 sleep 10
 reboot

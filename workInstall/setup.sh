@@ -2,6 +2,7 @@
 # This script was written for use on a Macbook Pro(2013) running ubuntu 16.04.3LTS
 
 # VARIABLES
+USER=''
 PACKAGES='htop uprecords-cgi nload tcptrack unity-tweak-tool vim git rdesktop fping firmware-b43-installer sl tig'
 THEME='vivacious-colors flatabulous-theme'
 
@@ -33,6 +34,15 @@ apt-get install $THEME -y
 
 # Gets background pictures from imgur repo and sets default
 wget http://imgur.com/sApPRDp.jpg http://imgur.com/b0gj8dw.jpg http://imgur.com/QbEzKgO.jpg http://imgur.com/XzIdxBS.jpg http://imgur.com/GUe3mvm.jpg
-mv *.jpg /home/nate/Pictures
-cd /home/nate/Pictures
+mv *.jpg /home/$USER/Pictures
+cd /home/$USER/Pictures
 cp -f XzIdxBS.jpg /usr/share/backgrounds/warty-final-ubuntu.png
+
+/usr/bin/gsettings set org.gnome.desktop.interface gtk-theme 'Flatabulous'
+/usr/bin/gsettings set org.gnome.desktop.wm.preferences theme 'Flatabulous'
+/usr/bin/gsettings set org.gnome.desktop.interface icon-theme 'Vivacious-Dark-Blue'
+/usr/bin/gsettings set com.canonical.Unity.Launcher launcher-position Bottom
+
+echo "Post-install has completed. Rebooting in 10 seconds..."
+sleep 10
+reboot
