@@ -50,7 +50,7 @@ wget https://dl.discordapp.net/apps/linux/$DISCORD_VERSION/discord-$DISCORD_VERS
 dpkg -i discord-$DISCORD_VERSION.deb
 
 # Set up lm-sensors
-sensors-detect
+sensors-detect --auto # Assume defaults for all sensors
 
 #set login screen/desktop background
 cp Wallpapers/Wallpaper.png /usr/share/backgrounds/
