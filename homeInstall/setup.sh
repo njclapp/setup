@@ -4,7 +4,7 @@
 # VARIABLES
 HOSTNAME=''
 USER=''
-BASIC_PACKAGES='vim htop git lm-sensors atom unity-tweak-tool vlc steam chromium-browser putty sl tig uprecords-cgi'
+BASIC_PACKAGES='vim htop git lm-sensors atom unity-tweak-tool vlc steam chromium-browser putty sl tig uprecords-cgi qemu-kvm libvirt-bin bridge-utils virt-manager'
 SYSADMIN_PACKAGES='nmap fping rdesktop tcptrack nload'
 THEME='ultra-flat-icons flatabulous-theme'
 DISCORD_VERSION='0.0.3'
@@ -51,6 +51,11 @@ dpkg -i discord-$DISCORD_VERSION.deb
 
 # Set up lm-sensors
 sensors-detect --auto # Assume defaults for all sensors
+
+# Set up VM Manager
+usermod -a -G libvirtd $USER
+echo -e "[User]\nSystemAccount=true" > /var/lib/AccountsService/users/libvirt-qemu # Needed to take libvert-qemu out of lock screen list
+service accounts-daemon restart
 
 #set login screen/desktop background
 cp Wallpapers/Wallpaper.png /usr/share/backgrounds/
