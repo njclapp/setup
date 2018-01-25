@@ -3,7 +3,7 @@
 
 # VARIABLES
 USER=''
-PACKAGES='htop uprecords-cgi nload tcptrack unity-tweak-tool vim git rdesktop fping firmware-b43-installer sl tig icewm'
+PACKAGES='htop uprecords-cgi nload tcptrack unity-tweak-tool vim git rdesktop fping firmware-b43-installer sl tig icewm gnome-multi-writer'
 THEME='vivacious-colors flatabulous-theme'
 
 # Check if user is root
