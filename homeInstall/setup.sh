@@ -4,7 +4,7 @@
 # VARIABLES
 HOSTNAME=''
 USER=''
-BASIC_PACKAGES='vim htop git lm-sensors atom unity-tweak-tool vlc steam chromium-browser putty sl tig uprecords-cgi qemu-kvm libvirt-bin bridge-utils virt-manager gnome-multi-writer minecraft-installer'
+BASIC_PACKAGES='vim htop git lm-sensors atom unity-tweak-tool vlc steam chromium-browser putty sl tig uprecords-cgi qemu-kvm libvirt-bin bridge-utils virt-manager gnome-multi-writer minecraft-installer neofetch'
 SYSADMIN_PACKAGES='nmap fping rdesktop tcptrack nload'
 THEME='ultra-flat-icons flatabulous-theme'
 DISCORD_VERSION='0.0.3'
@@ -34,7 +34,8 @@ chown $USER:$USER /home/$USER/Pictures/*
 add-apt-repository ppa:webupd8team/atom -y # Atom
 add-apt-repository ppa:noobslab/themes -y # Themes
 add-apt-repository ppa:noobslab/icons -y # Icons
-sudo add-apt-repository ppa:minecraft-installer-peeps/minecraft-installer # Minecraft
+sudo add-apt-repository ppa:minecraft-installer-peeps/minecraft-installer -y # Minecraft
+sudo add-apt-repository ppa:dawidd0811/neofetch -y # Neofetch
 apt-get update
 
 # Basic linux stuff
