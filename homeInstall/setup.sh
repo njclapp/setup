@@ -7,7 +7,7 @@ USER=''
 BASIC_PACKAGES='vim htop git lm-sensors atom unity-tweak-tool vlc steam chromium-browser putty sl tig uprecords-cgi qemu-kvm libvirt-bin bridge-utils virt-manager gnome-multi-writer minecraft-installer neofetch'
 SYSADMIN_PACKAGES='nmap fping rdesktop tcptrack nload'
 THEME='ultra-flat-icons flatabulous-theme'
-DISCORD_VERSION='0.0.3'
+DISCORD_VERSION='0.0.4'
 
 # Check if user is root
 if ! whoami | grep -q root; then
