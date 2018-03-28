@@ -11,7 +11,7 @@ PLAINTEXT='\033[0m'
 
 
 if ! whoami | grep -q root; then
-	echo -e "\033[031m[!] Please run this script as root!\033[0m"
+	echo -e "${COLOR}[!] Please run this script as root!${PLAINTEXT}"
     exit 1
 else
   continue
