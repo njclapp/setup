@@ -4,13 +4,8 @@
 # VARIABLES
 HOSTNAME='workhorse'
 USER=''
-<<<<<<< HEAD
 PACKAGES='apache2 deluge-web docker samba ssh git fortune cowsay lm-sensors tig make uptimed'
 ADMINISTRATION_PACKAGES='nload htop nmap fping tcptrack'
-=======
-PACKAGES='apache2 deluge-web docker samba ssh git fortune cowsay lm-sensors tig make'
-ADMINISTRATION_PACKAGES='nload htop nmap fping tcptrack smartmontools'
->>>>>>> d3ade515ab091c371c6f154a9be141d402a5ad45
 GREEN='\033[0;32m'
 RED='\033[0;31m'
 PLAINTEXT='\033[0m'
