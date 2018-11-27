@@ -7,7 +7,7 @@ USER=''
 BASIC_PACKAGES='vim htop git lm-sensors atom unity-tweak-tool vlc steam chromium-browser putty sl tig uprecords-cgi qemu-kvm libvirt-bin bridge-utils virt-manager gnome-multi-writer minecraft-installer neofetch'
 SYSADMIN_PACKAGES='nmap fping rdesktop tcptrack nload'
 THEME='ultra-flat-icons flatabulous-theme'
-DISCORD_VERSION='0.0.4'
+DISCORD_VERSION='0.0.5'
 
 # Check if user is root
 if ! whoami | grep -q root; then
@@ -22,8 +22,8 @@ apt-get update && sudo apt-get upgrade -y
 apt-get dist-upgrade -y
 
 # Move dotfiles
-mv .bashrc /home/$USER/
-mv .vimrc /home/$USER/
+mv .bashrc /home/$USER/; chown $USER:$USER /home/$USER/.bashrc
+mv .vimrc /home/$USER/; chown $USER:$USER /home/$USER/.vimrc
 
 # Move backgrounds to pictures folder
 cp Wallpapers/* /home/$USER/Pictures
@@ -48,8 +48,12 @@ apt-get install $SYSADMIN_PACKAGES -y
 apt-get install $THEME -y
 
 # Download/Install Discord
-wget https://dl.discordapp.net/apps/linux/$DISCORD_VERSION/discord-$DISCORD_VERSION.deb
+wget -4 https://dl.discordapp.net/apps/linux/$DISCORD_VERSION/discord-$DISCORD_VERSION.deb
 dpkg -i discord-$DISCORD_VERSION.deb
+
+# Download/Install VS Code (Manually)
+firefox https://code.visualstudio.com/Download
+read -p "Press enter to continue..."
 
 # Set up lm-sensors
 sensors-detect --auto # Assume defaults for all sensors
