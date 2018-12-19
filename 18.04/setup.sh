@@ -9,7 +9,7 @@
 
 # VARIABLES
 USER=''
-BASIC_PACKAGES='vim htop git lm-sensors atom unity-tweak-tool vlc steam chromium-browser putty sl tig uprecords-cgi qemu-kvm libvirt-bin bridge-utils virt-manager gnome-multi-writer minecraft-installer neofetch rename dconf-editor'
+BASIC_PACKAGES='vim htop git lm-sensors atom unity-tweak-tool vlc steam chromium-browser putty sl tig uptimed qemu-kvm libvirt-bin bridge-utils virt-manager gnome-multi-writer neofetch rename dconf-editor'
 SYSADMIN_PACKAGES='nmap fping rdesktop tcptrack nload'
 THEMES='ultra-flat-icons arc-theme papirus-icon-theme'
 DISCORD_VERSION='0.0.5'
