@@ -1,15 +1,15 @@
 #!/bin/bash
 # This script was written for use on Ubuntu 18.04LTS
 
-# TODO 18 Dec 2018
-# - add other wallpaper downloads
+# TODO 19 Dec 2018
 # - git clone wallpaper script and place in /usr/local/bin
 # - formatting/spacing
 # - functions? menu?
+# - virt-manager setup?
 
 # VARIABLES
 USER=''
-BASIC_PACKAGES='vim htop git tig lm-sensors atom unity-tweak-tool vlc steam chromium-browser putty sl tig uptimed qemu-kvm libvirt-bin bridge-utils virt-manager gnome-multi-writer neofetch rename dconf-editor'
+BASIC_PACKAGES='vim htop git tig lm-sensors atom unity-tweak-tool vlc steam chromium-browser putty sl tig uptimed qemu-kvm libvirt-bin bridge-utils virt-manager gnome-multi-writer neofetch dconf-editor'
 SYSADMIN_PACKAGES='nmap fping rdesktop tcptrack nload'
 THEMES='ultra-flat-icons arc-theme papirus-icon-theme'
 DISCORD_VERSION='0.0.5'
@@ -42,6 +42,10 @@ apt-get install $BASIC_PACKAGES -y
 # Sysadmin related packages
 apt-get install $SYSADMIN_PACKAGES -y
 
+# Set up lm-sensors
+echo -e "${GREEN}Detecting thermal sensors...${NC}"
+sensors-detect --auto
+
 # Install themes
 echo -e "${GREEN}Installing themes...${NC}"
 apt-get install $THEMES -y
@@ -62,18 +66,110 @@ mkdir /home/$USER/Pictures/sun_positionals /home/$USER/Pictures/wallpapers /home
 # Get sun positionals
 echo -e "${GREEN}Downloading positional sun pictures...${NC}"
 cd /home/$USER/Pictures/sun_positionals
-images=( "tH4MNmw" "Ewq4wIU" "a0Jb6AB" "ikxyP4q" "FFB6rrg" "5NfSHYL" "2LXn7o2" "3K6O7BH" )
-names=( "morning" "late_morning" "afternoon" "late_afternoon" "evening" "late_evening" "night" "late_night" )
+sun_images=( 
+"tH4MNmw"
+"Ewq4wIU"
+"a0Jb6AB"
+"ikxyP4q"
+"FFB6rrg"
+"5NfSHYL"
+"2LXn7o2"
+"3K6O7BH" )
 
-for i in ${!array[@]}
+sun_names=( 
+"morning"
+"late_morning"
+"afternoon"
+"late_afternoon"
+"evening"
+"late_evening"
+"night"
+"late_night" )
+
+for i in ${!sun_images[@]}
 do
-	wget -4 https://imgur.com/${images[$i]}.png -O ${names[$i]}.png
+	wget -4 https://imgur.com/${sun_images[$i]}.png -O ${sun_names[$i]}.png
 done
 
 
-# Get wallpapers
-cd /home/$USER/Pictures/wallpapers
-wget -4 https://imgur.com/a/29jWnHn/zip && unzip zip && rm -rf zip
+# Get dark wallpapers
+echo -e "${GREEN}Downloading dark wallpapers...${NC}"
+cd /home/$USER/Pictures/dark
+dark_image=( 
+"r4EWCmy.jpg"
+"hJRYN5d.png"
+"6UYLJEF.jpg"
+"RgAUp2X.jpg"
+"NHyq8Eu.jpg"
+"Xx7j1dk.png"
+"y118SN0.jpg"
+"uR4KQWV.jpg"
+"4iEViiI.png"
+"cqkQmb9.jpg" )
+
+dark_name=( 
+"climbing.jpg"
+"CowSpaceship.png"
+"debian_dark.jpg"
+"FalloutNV.jpg"
+"fez.jpg"
+"forest.png"
+"House.jpg"
+"LotR.jpg"
+"LPGold.png"
+"Tower.jpg" )
+
+for i in ${!dark_image[@]}
+do
+	wget -4 https://imgur.com/${dark_image[$i]} -O ${dark_name[$i]}
+done
+
+# Get light wallpapers
+echo -e "${GREEN}Downloading light wallpapers...${NC}"
+cd /home/$USER/Pictures/light
+light_image=( 
+"araFdUA.jpg"
+"PviM8jH.png"
+"ZJkX70u.jpg"
+"r7uXGbp.jpg"
+"lN6kQ6Q.jpg"
+"Nlit893.png"
+"P6gPh1e.jpg"
+"5NiPvCW.jpg"
+"wuAO6TY.jpg"
+"FyF2b5z.jpg"
+"ilWXMNO.png"
+"mW8T5h0.png"
+"zT9xOlc.png"
+"HTMhCm2.jpg"
+"Wo4hILU.jpg"
+"UP05vac.jpg"
+"nxEM3qQ.jpg"
+ )
+
+light_name=( 
+"debian_light.jpg"
+"doge.png"
+"lenny.jpg"
+"firewatch1.jpg"
+"firewatch2.jpg"
+"mountain.png"
+"simple.jpg"
+"lake.jpg"
+"firewatch3.jpg"
+"NoMansSky.jpg"
+"NoMansSky2.png"
+"lines.png"
+"yosemite.png"
+"skyrim2.jpg"
+"rain.jpg"
+"wind.jpg"
+"skyrim.jpg" )
+
+for i in ${!light_image[@]}
+do
+	wget -4 https://imgur.com/${light_image[$i]} -O ${light_name[$i]}
+done
 
 # Download/Install VS Code (Manually)
 echo -e "${GREEN}Installing VS Code...${NC}"
