@@ -2,8 +2,6 @@
 # This script was written for use on Ubuntu 18.04LTS
 
 # TODO 19 Dec 2018
-# - git clone wallpaper script and place in /usr/local/bin
-# - formatting/spacing
 # - functions? menu?
 # - virt-manager setup?
 
@@ -91,7 +89,6 @@ do
 	wget -4 https://imgur.com/${sun_images[$i]}.png -O ${sun_names[$i]}.png
 done
 
-
 # Get dark wallpapers
 echo -e "${GREEN}Downloading dark wallpapers...${NC}"
 cd /home/$USER/Pictures/dark
@@ -171,6 +168,11 @@ do
 	wget -4 https://imgur.com/${light_image[$i]} -O ${light_name[$i]}
 done
 
+# Install wallpaper changer scripts to /usr/local/bin
+git clone https://github.com/njclapp/background_changer/background_changer /home/$USER/Desktop
+cd /home/$USER/Desktop/background_changer
+/bin/sh setup.sh
+
 # Download/Install VS Code (Manually)
 echo -e "${GREEN}Installing VS Code...${NC}"
 firefox https://code.visualstudio.com/Download &
@@ -198,7 +200,7 @@ gsettings set org.gnome.desktop.interface show-battery-percentage true
 echo -e "${GREEN}Setting hotkey for wallpaper script...(thinkpad black button)${NC}"
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'Run wallpaper script'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'notify-send "help"'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command '/usr/local/bin/background-change'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding 'Launch1'
 
 # Disable accidental screenshot button presses
