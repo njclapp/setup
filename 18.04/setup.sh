@@ -172,6 +172,8 @@ done
 git clone https://github.com/njclapp/background_changer/background_changer /home/$USER/Desktop
 cd /home/$USER/Desktop/background_changer
 /bin/sh setup.sh
+(crontab -u $USER -l; echo "@reboot /usr/local/bin/sun_changer") | crontab -u $USER -
+(crontab -u $USER -l; echo "0 * * * * /usr/local/bin/sun_changer") | crontab -u $USER -
 
 # Download/Install VS Code (Manually)
 echo -e "${GREEN}Installing VS Code...${NC}"
