@@ -4,12 +4,13 @@
 # TODO 19 Dec 2018
 # - functions? menu?
 # - virt-manager setup?
+# - Add install atom section
 
 # VARIABLES
-USER=''
-BASIC_PACKAGES='vim htop git tig lm-sensors atom unity-tweak-tool vlc steam chromium-browser putty sl tig uptimed qemu-kvm libvirt-bin bridge-utils virt-manager gnome-multi-writer neofetch dconf-editor'
+USER='nate'
+BASIC_PACKAGES='vim htop git tig lm-sensors unity-tweak-tool vlc steam chromium-browser putty sl tig uptimed qemu-kvm libvirt-bin bridge-utils virt-manager gnome-multi-writer neofetch dconf-editor'
 SYSADMIN_PACKAGES='nmap fping rdesktop tcptrack nload'
-THEMES='ultra-flat-icons arc-theme papirus-icon-theme'
+THEMES='arc-theme papirus-icon-theme' # ultra-flat-icons #not installing for now
 DISCORD_VERSION='0.0.5'
 
 RED='\033[0;31m'
@@ -176,9 +177,9 @@ cd /home/$USER/Desktop/background_changer
 (crontab -u $USER -l; echo "0 * * * * /usr/local/bin/sun_changer") | crontab -u $USER -
 
 # Download/Install VS Code (Manually)
-echo -e "${GREEN}Installing VS Code...${NC}"
-firefox https://code.visualstudio.com/Download &
-read -p "Install VS Code manually, then press enter..."
+#echo -e "${GREEN}Installing VS Code...${NC}"
+#firefox https://code.visualstudio.com/Download &
+#read -p "Install VS Code manually, then press enter..."
 
 # Change DE settings
 # Set icon and window theme
