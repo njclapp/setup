@@ -170,8 +170,8 @@ do
 done
 
 # Install wallpaper changer scripts to /usr/local/bin
-git clone https://github.com/njclapp/background_changer/background_changer /home/$USER/Desktop
-cd /home/$USER/Desktop/background_changer
+git clone https://github.com/njclapp/background_changer /home/$USER/Desktop/background_changer
+cd /home/$USER/Desktop/background_changer/
 /bin/sh setup.sh
 (crontab -u $USER -l; echo "@reboot /usr/local/bin/sun_changer") | crontab -u $USER -
 (crontab -u $USER -l; echo "0 * * * * /usr/local/bin/sun_changer") | crontab -u $USER -
