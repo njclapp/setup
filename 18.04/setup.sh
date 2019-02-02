@@ -51,7 +51,7 @@ apt-get install $THEMES -y
 
 echo -e "${GREEN}Cloning vimix and installing...${NC}"
 git clone https://github.com/vinceliuice/vimix-gtk-themes.git /opt/vimix
-cd /opt/vimix && ./Install
+./opt/vimix/Install
 
 # Move dotfiles
 echo -e "${GREEN}Moving .bashrc and .vimrc to user directory...${NC}"
@@ -184,31 +184,31 @@ cd /home/$USER/Desktop/background_changer/
 # Change DE settings
 # Set icon and window theme
 echo -e "${GREEN}Setting themes...${NC}"
-gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
-gsettings set org.gnome.desktop.interface gtk-theme Vimix-dark-doder
+/usr/bin/gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
+/usr/bin/gsettings set org.gnome.desktop.interface gtk-theme Vimix-dark-doder
 
 echo -e "${GREEN}Adjusting desktop settings...${NC}"
 # Make clicking active window icon minimize window
-gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+/usr/bin/gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 # Place dash on bottom
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+/usr/bin/gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 # Icon size adjustment
-gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 36
+/usr/bin/gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 36
 # Show date in top bar
-gsettings set org.gnome.desktop.interface clock-show-date true
+/usr/bin/gsettings set org.gnome.desktop.interface clock-show-date true
 # Show battery percentage
-gsettings set org.gnome.desktop.interface show-battery-percentage true
+/usr/bin/gsettings set org.gnome.desktop.interface show-battery-percentage true
 
 # Set keyboard shortcut for wallpaper script
 echo -e "${GREEN}Setting hotkey for wallpaper script...(thinkpad black button)${NC}"
-gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'Run wallpaper script'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command '/usr/local/bin/background-change'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding 'Launch1'
+/usr/bin/gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
+/usr/bin/gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'Run wallpaper script'
+/usr/bin/gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command '/usr/local/bin/background-change'
+/usr/bin/gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding 'Launch1'
 
 # Disable accidental screenshot button presses
 echo -e "${GREEN}Disabling screenshot button...(you're welcome)${NC}"
-gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot ''
+/usr/bin/gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot ''
 
 echo -e "${GREEN}setup.sh has completed successfully. Please reboot your computer${NC}"
 echo -e "${GREEN}to start using it.${NC}"
