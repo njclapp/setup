@@ -8,7 +8,7 @@
 
 # VARIABLES
 USER='nate'
-BASIC_PACKAGES='vim htop git tig lm-sensors unity-tweak-tool vlc steam chromium-browser putty sl tig uptimed qemu-kvm libvirt-bin bridge-utils virt-manager gnome-multi-writer neofetch dconf-editor'
+BASIC_PACKAGES='vim htop git tig lm-sensors unity-tweak-tool vlc steam chromium-browser putty sl tig uptimed qemu-kvm libvirt-bin bridge-utils virt-manager gnome-multi-writer neofetch dconf-editor keepass2 xdotool'
 SYSADMIN_PACKAGES='nmap fping rdesktop tcptrack nload'
 THEMES='arc-theme papirus-icon-theme' # ultra-flat-icons #not installing for now
 DISCORD_VERSION='0.0.5'
